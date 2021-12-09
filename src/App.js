@@ -1,9 +1,9 @@
 import './App.css';
-import Todo from './components/Todo';
+import TaskManager from './components/TaskManager';
 
 const App = () => (
   <div className="todo-app">
-    <Todo />
+    <TaskManager />
   </div>
 );
 
