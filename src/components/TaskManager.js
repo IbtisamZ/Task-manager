@@ -3,19 +3,23 @@ import TaskForm from './TaskForm';
 
 const TaskManager = () => {
 
+    // set states
     const [tasks, setTasks] = useState([]);
     const [input, setInput] = useState('');
 
+    // adding tasks
     const addTask = (task) => {
         if (!task) { return; } // to prevent empty tasks
         setTasks([...tasks, {id: Date.now(), title: input, completed: false}]);
     };
 
+    // deleting tasks
     const removeTask = ({id}) => {
         setTasks(tasks.filter((task)=> task.id !== id));
         // console.log('DELETEDD =>', id);
     };
 
+    // displaying tasks
     const allTasks = tasks.map((item) => {
         // console.log(item);
         return (
@@ -23,7 +27,7 @@ const TaskManager = () => {
         <div className="task-item" key={item.id}>
             <input type="checkbox" value="completed" name="completed" id="completed"></input>
             <div className="task-title">{item.title}</div>
-            <button className="todo-remove-button font-weight-bold" onClick={() => removeTask(item)}>X</button>
+            <button className="task-remove-button font-weight-bold" onClick={() => removeTask(item)}>X</button>
         </div>
         </>
         );

@@ -7,9 +7,10 @@ const TaskForm = (props) => {
         input,
     } = props;
 
+    // prevent browser reloading
     const handleSubmit = (e) => {
         e.preventDefault();
-        addTask(input);
+        addTask(input); // adding task
         setInput('');
     };
 
@@ -26,10 +27,10 @@ const TaskForm = (props) => {
                 placeholder="Add a task.."
                 value={input}
                 name="text"
-                className="todo-input"
+                className="task-input"
                 onChange={handleInput}
             />
-            <button className="todo-button" onClick={handleSubmit}>Add</button>
+            <button className="add-button" onClick={handleSubmit}>Add</button>
         </form>
     </div>
     );
