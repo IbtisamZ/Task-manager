@@ -26,14 +26,14 @@ h1 {
   width: 400px;
   border-radius: 12px;
   background: transparent;
-  padding: 12px 15px;
+  padding: 16px 15px;
   margin: 70px 10px;
 }
 
 .add-button {
   border-radius: 12%;
   border: none;
-  padding: 12px 30px;
+  padding: 16px 30px;
   font-weight: bold;
   background-color: rgb(70, 69, 69);
   color: white;
@@ -43,6 +43,7 @@ h1 {
 .add-button:hover {
   background-color: rgb(97, 94, 94);
 }
+
 .task-remove-button {
   /* border-radius: 10px; */
   border: none;
