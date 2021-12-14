@@ -85,6 +85,7 @@ h1 {
 
 .task-title {
   width: 420px;
+  word-wrap: break-word;
 }
 
 .strike-through {
