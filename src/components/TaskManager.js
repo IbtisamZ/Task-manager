@@ -37,7 +37,7 @@ const TaskManager = () => {
 
     // displaying tasks
     const allTasks = tasks.map((item) => {
-        console.log(item);
+        // console.log(item);
         return (
         <>
         <div className="task-item" key={item.id}>
