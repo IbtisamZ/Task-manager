@@ -86,3 +86,8 @@ h1 {
 .task-title {
   width: 420px;
 }
+
+.strike-through {
+  text-decoration: line-through;
+  color: rgb(106, 106, 106);
+}

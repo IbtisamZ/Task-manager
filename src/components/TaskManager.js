@@ -7,27 +7,43 @@ const TaskManager = () => {
     const [tasks, setTasks] = useState([]);
     const [input, setInput] = useState('');
 
+    const tasksData = {
+        id: Date.now(),
+        title: input,
+        completed: false
+    }; // to create tasks
+
     // adding tasks
     const addTask = (task) => {
         if (!task) { return; } // to prevent empty tasks
-        setTasks([...tasks, {id: Date.now(), title: input, completed: false}]);
+        setTasks([...tasks, tasksData]);
     };
 
     // deleting tasks
-    const removeTask = ({id}) => {
+    const removeTask = (id) => {
         setTasks(tasks.filter((task)=> task.id !== id));
         // console.log('DELETEDD =>', id);
     };
 
+    // toggling task state (completion)
+    const toggleComplete = (id) => {
+        setTasks(tasks.map(todo => {
+          if (todo.id === id) {
+            return { ...todo, completed: !todo.completed }; // to toggle state
+          }
+          return todo;
+        }));
+      };
+
     // displaying tasks
     const allTasks = tasks.map((item) => {
-        // console.log(item);
+        console.log(item);
         return (
         <>
         <div className="task-item" key={item.id}>
-            <input type="checkbox" value="completed" name="completed" id="completed"></input>
-            <div className="task-title">{item.title}</div>
-            <button className="task-remove-button font-weight-bold" onClick={() => removeTask(item)}>X</button>
+            {/* <input type="checkbox" value="completed" name="completed" id="completed"></input> */}
+            <div className={item.completed ? "strike-through task-title" : "task-title"} onClick={() => toggleComplete(item.id)}>{item.title}</div>
+            <button className="task-remove-button font-weight-bold" onClick={() => removeTask(item.id)}>X</button>
         </div>
         </>
         );
