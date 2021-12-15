@@ -3,8 +3,8 @@
 In this crud project, we create a task manager application to add, edit and delete tasks from a to-do list. 
 
 ---
-This project was created using [Create React App](https://github.com/facebook/create-react-app).
-
-To run the app: `npm start`
-
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## [Click here to view the demo.](https://ibtisamz.github.io/Task-manager-react.js)
+### App features:
+1) You can create new tasks by adding them to the list.
+2) You can delete tasks from the list.
+3) You can set tasks as completed (toggle) by clicking on the task title.
