@@ -1,9 +1,9 @@
 import './App.css';
-import TaskManager from './components/TaskManager';
+import TodoListCard from './components/TodoListCard';
 
 const App = () => (
   <div className="task-manager-app">
-    <TaskManager />
+    <TodoListCard />
   </div>
 );
 
