@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Todo-App/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/Todo-App/static/js/main.428c8efe.chunk.js",
-    "main.js.map": "/Todo-App/static/js/main.428c8efe.chunk.js.map",
-    "runtime-main.js": "/Todo-App/static/js/runtime-main.8c1033f3.js",
-    "runtime-main.js.map": "/Todo-App/static/js/runtime-main.8c1033f3.js.map",
-    "static/js/2.f6022945.chunk.js": "/Todo-App/static/js/2.f6022945.chunk.js",
-    "static/js/2.f6022945.chunk.js.map": "/Todo-App/static/js/2.f6022945.chunk.js.map",
-    "index.html": "/Todo-App/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/Todo-App/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.f6022945.chunk.js.LICENSE.txt": "/Todo-App/static/js/2.f6022945.chunk.js.LICENSE.txt"
+    "main.css": "/Task-manager-react.js/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/Task-manager-react.js/static/js/main.428c8efe.chunk.js",
+    "main.js.map": "/Task-manager-react.js/static/js/main.428c8efe.chunk.js.map",
+    "runtime-main.js": "/Task-manager-react.js/static/js/runtime-main.e760891e.js",
+    "runtime-main.js.map": "/Task-manager-react.js/static/js/runtime-main.e760891e.js.map",
+    "static/js/2.f6022945.chunk.js": "/Task-manager-react.js/static/js/2.f6022945.chunk.js",
+    "static/js/2.f6022945.chunk.js.map": "/Task-manager-react.js/static/js/2.f6022945.chunk.js.map",
+    "index.html": "/Task-manager-react.js/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/Task-manager-react.js/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.f6022945.chunk.js.LICENSE.txt": "/Task-manager-react.js/static/js/2.f6022945.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8c1033f3.js",
+    "static/js/runtime-main.e760891e.js",
     "static/js/2.f6022945.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
     "static/js/main.428c8efe.chunk.js"
