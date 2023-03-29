@@ -3,7 +3,7 @@
 In this crud project, we create a task manager application to add and manage tasks in our to-do list. 
 
 ---
-## [Click here to view the demo.](https://ibtisamz.github.io/Task-manager-react.js)
+## [Click here to view the demo.](https://ibtisamz.github.io/Task-manager)
 ### App features:
 1) You can create new tasks by adding them to the list.
 2) You can delete tasks from the list.
