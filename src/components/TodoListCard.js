@@ -58,7 +58,7 @@ const TodoListCard = () => {
     setTodoCount((currentCount) => currentCount - 1);
   };
 
-  // toggling completion
+  // toggling todo completion
   const toggleCompletion = (id) => {
     const toggleItem = todo.map((item) => {
       if (item.id === id) {
@@ -92,6 +92,7 @@ const TodoListCard = () => {
           >
               <Box sx={{
                 display: 'flex',
+                flexDirection: 'row',
                 alignItems: 'center',
                 textDecoration: item.completed ? 'line-through' : null,
                 color: item.completed ? 'common.silverSand' : 'common.gray',
@@ -102,11 +103,11 @@ const TodoListCard = () => {
                       checked={item.completed}
                       onChange={() => toggleCompletion(item.id)}
                   />
-                  <Typography
-                      sx={{ overflowWrap: 'break-word' }}
-                  >
-                      {item.title}
-                  </Typography>
+                  <Box sx={{ overflowWrap: 'break-word' }}>
+                      <Typography>
+                          {item.title}
+                      </Typography>
+                  </Box>
               </Box>
               <Box>
                   <IconButton
@@ -166,11 +167,10 @@ const TodoListCard = () => {
   return (
       <>
           <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            position: 'relative',
             height: 650,
             maxWidth: 530,
+            display: 'flex',
+            flexDirection: 'column',
             margin: {
               xs: '5rem 1rem',
               sm: '5rem auto',
@@ -225,10 +225,10 @@ const TodoListCard = () => {
               </Box>
               <Collapse in={expanded} timeout="auto" unmountOnExit>
                   <Card sx={{
-                    height: expanded ? 500 : 1,
-                    overflowY: 'scroll',
                     px: 4,
                     py: 6,
+                    height: expanded ? 500 : 1,
+                    overflowY: 'scroll',
                     borderRadius: 0,
                     boxShadow: `0 10px 20px rgba(0,0,0,0.05), 
                     0 6px 6px rgba(0,0,0,0.05)`,
@@ -242,9 +242,10 @@ const TodoListCard = () => {
               </Collapse>
           </Box>
           <Box sx={{
+            width: 1,
             bottom: 10,
-            left: 10,
-            position: 'absolute',
+            position: 'fixed',
+            textAlign: 'center',
             color: 'common.silverSand',
             fontSize: 13,
           }}
