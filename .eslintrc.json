@@ -15,6 +15,7 @@
       "react/jsx-indent" : ["error", 4],
       "react/jsx-indent-props": ["error", 4],
       "no-console": "off",
+      "react/prop-types": 0,
       "import/extensions": "off",
       "react/react-in-jsx-scope": "off",
       "max-len": ["error", { "code": 80 }],
