@@ -1,4 +1,4 @@
-# Task manager app using React js
+# Task manager app using React js + MUI
 
 In this crud project, we create a task manager application to add and manage tasks in our to-do list. 
 
