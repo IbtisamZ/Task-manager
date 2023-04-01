@@ -22,6 +22,17 @@ const App = () => {
         silverSand: '#b8c3c6',
       },
     },
+    components: {
+      MuiButtonBase: {
+        styleOverrides: {
+          root: {
+            '&:focus': {
+              outline: 'none',
+            },
+          },
+        },
+      },
+    },
   });
 
   return (
