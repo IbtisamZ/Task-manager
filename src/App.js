@@ -1,7 +1,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import createTheme from '@mui/material/styles/createTheme';
 import ThemeProvider from '@mui/material/styles/ThemeProvider';
-import TodoListCard from './components/TodoListCard';
+import TodoListApp from './components/TodoListApp';
 
 const App = () => {
   const theme = createTheme({
@@ -10,14 +10,14 @@ const App = () => {
         default: '#fff',
       },
       primary: {
-        main: '#d7e6ea',
+        main: 'rgba(199, 224, 227)',
       },
       text: {
         main: '#fff',
       },
       common: {
         gray: '#808080',
-        water: '#cce9ee',
+        water: 'rgba(193, 217, 220)',
         antiFlashWhite: '#eff1f2',
         silverSand: '#b8c3c6',
       },
@@ -38,7 +38,7 @@ const App = () => {
   return (
       <ThemeProvider theme={theme}>
           <CssBaseline />
-          <TodoListCard />
+          <TodoListApp />
       </ThemeProvider>
   );
 };
