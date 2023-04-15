@@ -7,8 +7,10 @@ import {
   Typography,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
+import ClearIcon from '@mui/icons-material/Clear';
 import { Fragment, useState } from 'react';
+import RadioButtonUncheckedIcon from '@mui/icons-material/RadioButtonUnchecked';
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
 
 const TodoForm = (props) => {
   const {
@@ -18,12 +20,11 @@ const TodoForm = (props) => {
   const [input, setInput] = useState('');
   const [todo, setTodo] = useState([]);
 
-  // adding todos
   const addTodoItem = (item) => {
     if (!item) { return; } // prevent empty values
 
     setTodo((prev) => [
-      ...prev, // saving previous todos
+      ...prev, // saving previous state
       {
         id: Date.now(),
         title: input,
@@ -43,13 +44,11 @@ const TodoForm = (props) => {
     setInput(e.target.value);
   };
 
-  // removing todos
   const removeTodoItem = (id) => {
     setTodo(todo.filter((item) => item.id !== id));
     setTodoCount((currentCount) => currentCount - 1);
   };
 
-  // toggling todo completion
   const toggleCompletion = (id) => {
     const toggleItem = todo.map((item) => {
       if (item.id === id) {
@@ -66,16 +65,13 @@ const TodoForm = (props) => {
       <form onSubmit={handleSubmit}>
           <Box sx={{
             display: 'flex',
-            justifyContent: 'space-between',
+            justifyContent: 'center',
             alignItems: 'center',
           }}
           >
               <TextField
                   sx={{
-                    width: {
-                      xs: '70%',
-                      sm: '80%',
-                    },
+                    width: '60%',
                   }}
                   variant="standard"
                   placeholder="Add a task here.."
@@ -87,12 +83,12 @@ const TodoForm = (props) => {
                   type="submit"
                   size="small"
                   sx={{
-                    ml: 3,
+                    ml: 4,
                     color: 'text.main',
                     boxShadow: 'none',
                     backgroundColor: 'primary.main',
                     '&:hover': {
-                      backgroundColor: 'common.water',
+                      backgroundColor: 'common.argent',
                     },
                   }}
                   aria-label="add"
@@ -125,6 +121,8 @@ const TodoForm = (props) => {
                       disableRipple
                       checked={item.completed}
                       onChange={() => toggleCompletion(item.id)}
+                      icon={<RadioButtonUncheckedIcon />}
+                      checkedIcon={<RadioButtonCheckedIcon />}
                   />
                   <Box sx={{ overflowWrap: 'break-word' }}>
                       <Typography>
@@ -138,7 +136,7 @@ const TodoForm = (props) => {
                       aria-label="delete"
                       onClick={() => removeTodoItem(item.id)}
                   >
-                      <DeleteIcon />
+                      <ClearIcon sx={{ color: 'common.gray2' }} />
                   </IconButton>
               </Box>
           </Box>
@@ -147,7 +145,7 @@ const TodoForm = (props) => {
   return (
       <Box>
           {todoForm}
-          <Box mt={6}>
+          <Box mt={6} px={2}>
               {todoItems}
           </Box>
       </Box>

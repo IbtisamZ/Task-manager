@@ -1,8 +1,6 @@
 import {
   Box,
   Card,
-  Divider,
-  Collapse,
   Typography,
 } from '@mui/material';
 import { useState } from 'react';
@@ -10,7 +8,6 @@ import TodoForm from '../TodoForm/TodoForm';
 
 const TodoCard = () => {
   const [todoCount, setTodoCount] = useState(0);
-  const [expanded, setExpanded] = useState(true);
 
   const currentDate = new Date().toLocaleString(
     'en-us',
@@ -25,79 +22,61 @@ const TodoCard = () => {
     { weekday: 'long' },
   );
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
-
   return (
       <Box sx={{
-        height: 700,
-        maxWidth: 530,
-        margin: {
-          xs: '5rem 1rem',
-          sm: '5rem auto',
-        },
+        width: 1,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
       >
-          <Box
-              sx={{
-                display: 'flex',
-                textAlign: 'center',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: expanded ? 180 : 1,
-                maxHeight: expanded ? 180 : 1,
-                transition: 'all 0.5s ease',
-                backgroundColor: 'primary.main',
-                borderBottom: expanded ? '1px solid #f4f6f7' : null,
-                boxShadow: `0 10px 20px rgba(0,0,0,0.10),
-                    0 6px 6px rgba(0,0,0,0.05)`,
-              }}
-              onClick={handleExpandClick}
+          <Card sx={{
+            px: 4,
+            py: 6,
+            m: 1,
+            width: 1,
+            height: 560,
+            maxWidth: 530,
+            borderRadius: 3,
+            overflowY: 'scroll',
+            boxShadow: `0 10px 20px rgba(0, 0, 0, .05), 
+                    0 6px 6px rgba(0, 0, 0, .05)`,
+          }}
           >
-              <Box mb={3} mt={4}>
-                  <Box>
-                      <Typography variant="h4" color="text.main">
-                          {currentDay}
-                      </Typography>
-                  </Box>
-                  <Box>
-                      <Typography color="text.main">
-                          {currentDate}
-                      </Typography>
-                  </Box>
-                  <Box mt={2} mb={1} mx={2}>
-                      <Divider
-                          sx={{ backgroundColor: 'common.antiFlashWhite' }}
-                      />
-                  </Box>
-                  {expanded
-                        && (
-                        <Box>
-                            <Typography
-                                color="text.main"
-                                sx={{ fontWeight: 400, fontSize: 13 }}
-                            >
-                                {`${todoCount} tasks`}
-                            </Typography>
-                        </Box>
-                        )}
-              </Box>
-          </Box>
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
-              <Card sx={{
-                px: 4,
-                py: 6,
-                height: expanded ? 520 : 1,
-                overflowY: 'scroll',
-                borderRadius: 0,
-                boxShadow: `0 10px 20px rgba(0,0,0,0.05), 
-                    0 6px 6px rgba(0,0,0,0.05)`,
+              <Box sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'center',
+                mb: 5,
               }}
               >
-                  <TodoForm setTodoCount={setTodoCount} />
-              </Card>
-          </Collapse>
+                  <Typography
+                      variant="h4"
+                      color="common.gray3"
+                      sx={{ fontWeight: 600 }}
+                  >
+                      {currentDay}
+                  </Typography>
+                  <Typography
+                      color="common.gray3"
+                  >
+                      {currentDate}
+                  </Typography>
+                  <Box mt={2}>
+                      <Typography
+                          color="common.gray2"
+                          sx={{
+                            fontWeight: 400,
+                            fontSize: 13,
+                          }}
+                      >
+                          {`${todoCount} tasks`}
+                      </Typography>
+                  </Box>
+              </Box>
+              <TodoForm setTodoCount={setTodoCount} />
+          </Card>
       </Box>
   );
 };

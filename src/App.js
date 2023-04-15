@@ -7,19 +7,22 @@ const App = () => {
   const theme = createTheme({
     palette: {
       background: {
-        default: '#fff',
+        default: '#efeeea',
       },
       primary: {
-        main: 'rgba(199, 224, 227)',
+        main: '#bab6b6',
       },
       text: {
         main: '#fff',
       },
       common: {
         gray: '#808080',
+        gray2: 'rgba(0, 0, 0, 0.2)',
+        gray3: 'gray',
         water: 'rgba(193, 217, 220)',
         antiFlashWhite: '#eff1f2',
         silverSand: '#b8c3c6',
+        argent: '#c4c2c2',
       },
     },
     components: {
@@ -28,6 +31,19 @@ const App = () => {
           root: {
             '&:focus': {
               outline: 'none',
+            },
+          },
+        },
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          root: {
+            color: '#808080',
+          },
+          input: {
+            '&:-webkit-autofill': {
+              WebkitTextFillColor: '#808080',
+              transition: '1000000s ease-in-out',
             },
           },
         },
